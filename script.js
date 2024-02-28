@@ -7,6 +7,8 @@ const createTask = (e)=>{
 
     const input = document.querySelector("[data-form-input]");
     const task = document.querySelector("[data-tag]");
+    const list = document.createElement('li');
+    list.classList.add('card')
 
 
 
@@ -14,16 +16,18 @@ const createTask = (e)=>{
 
 
     const content = `
-    <li class="card">
             <div>
             <i class="far fa-check-square icon"></i>
             <span class="task">${value}</span>
             </div>
             <i class="fas fa-trash-alt trashIcon icon"></i>
-    </li>
     `
 
-    task.innerHTML += content
+    list.innerHTML = content;
+
+    task.appendChild(list)
+
+
 
     console.log(value)
     console.log(task)
