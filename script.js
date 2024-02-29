@@ -22,12 +22,10 @@ const createTask = (e) => {
 
     titleTask.innerText = value;
 
-    const trashIcon = document.createElement("i");
-    trashIcon.classList.add("fas", "fa-trash-alt", "trashIcon", "icon");
-  
+
 
     list.appendChild(tackContent);
-    list.appendChild(trashIcon); 
+    list.appendChild(deleteIcon()); 
 
     task.appendChild(list);
 
@@ -52,6 +50,22 @@ const completeTask = (e) => {
     element.classList.toggle("fas");
     element.classList.toggle("completeIcon")
     element.classList.toggle("far");
+}
+
+
+const deleteIcon = ()=>{
+    const trashIcon = document.createElement("i");
+    trashIcon.classList.add("fas", "fa-trash-alt", "trashIcon", "icon");
+    trashIcon.addEventListener('click', deleteTask);
+
+    return trashIcon
+}
+
+const deleteTask = (e)=>{
+    const parent = e.target.parentElement;
+
+    parent.remove();
+
 }
 
 
