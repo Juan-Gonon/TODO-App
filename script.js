@@ -1,3 +1,6 @@
+import checkComplete from "./components/checkComplete.js";
+import deleteIcon from "./components/deleteIcon.js";
+
 (()=>{
 
 
@@ -33,41 +36,6 @@ const createTask = (e) => {
 }
 
 btn.addEventListener('click', createTask);
-
-const checkComplete = () => {
-    const i = document.createElement("i");
-    i.classList.add("far", "fa-check-square", "icon");
-
-    i.addEventListener("click", completeTask);
-
-    return i;
-}
-
-const completeTask = (e) => {
-
-    const element = e.target;
-
-    element.classList.toggle("fas");
-    element.classList.toggle("completeIcon")
-    element.classList.toggle("far");
-}
-
-
-const deleteIcon = ()=>{
-    const trashIcon = document.createElement("i");
-    trashIcon.classList.add("fas", "fa-trash-alt", "trashIcon", "icon");
-    trashIcon.addEventListener('click', deleteTask);
-
-    return trashIcon
-}
-
-const deleteTask = (e)=>{
-    const parent = e.target.parentElement;
-
-    parent.remove();
-
-}
-
 
 
 })();
